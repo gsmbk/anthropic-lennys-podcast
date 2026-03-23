@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-        serif: ["var(--font-instrument-serif)", "Georgia", "serif"],
+        sans: ["var(--font-body)", "Inter", "-apple-system", "sans-serif"],
+        serif: ["var(--font-display)", "Instrument Serif", "Georgia", "serif"],
       },
       colors: {
         background: "var(--color-bg)",
