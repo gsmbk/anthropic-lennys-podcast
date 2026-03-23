@@ -76,7 +76,6 @@ function BookCard({ book }: { book: Book }) {
           fill
           className="object-cover"
           sizes="80px"
-          onError={() => {}}
         />
       </div>
 
