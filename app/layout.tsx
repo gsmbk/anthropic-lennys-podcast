@@ -41,9 +41,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
+      <html
       lang="en"
-      className={`${instrumentSerif.variable} ${inter.variable}`}
+      className={`${instrumentSerif.variable} ${inter.variable} bg-background`}
       suppressHydrationWarning
     >
       <body>{children}</body>
