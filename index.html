@@ -518,6 +518,14 @@ section {
   background: var(--color-accent-light);
 }
 
+.guest-card__social-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  width: 100%;
+  margin-bottom: 0.125rem;
+  letter-spacing: 0.01em;
+}
+
 /* ===== CULTURE SECTION ===== */
 .culture-section {
   background: var(--color-surface-2);
@@ -546,6 +554,12 @@ section {
 .culture-theme__label {
   position: sticky;
   top: 80px;
+}
+
+@media (max-width: 768px) {
+  .culture-theme__label {
+    position: static;
+  }
 }
 
 .culture-theme__icon {
@@ -1028,6 +1042,7 @@ section {
             </div>
           </div>
           <div class="guest-card__social-links">
+            <span class="guest-card__social-label">Find Mike online</span>
             <a href="https://x.com/mikeyk" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Mike Krieger on X">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
@@ -1077,6 +1092,7 @@ section {
             </div>
           </div>
           <div class="guest-card__social-links">
+            <span class="guest-card__social-label">Find Benjamin online</span>
             <a href="https://x.com/8enmann" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Benjamin Mann on X">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
@@ -1129,6 +1145,7 @@ section {
             </div>
           </div>
           <div class="guest-card__social-links">
+            <span class="guest-card__social-label">Find Boris online</span>
             <a href="https://x.com/bcherny" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Boris Cherny on X">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
@@ -1181,6 +1198,7 @@ section {
             </div>
           </div>
           <div class="guest-card__social-links">
+            <span class="guest-card__social-label">Find Jenny online</span>
             <a href="https://x.com/jenny_wen" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Jenny Wen on X">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
@@ -1342,7 +1360,7 @@ section {
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         Most Important Skill
       </div>
-      <h2 class="section-header__title">What It Takes to Join Anthropic</h2>
+      <h2 class="section-header__title">Most Valued Skills at Anthropic</h2>
     </div>
 
     <div class="skills-highlight fade-in">
@@ -1739,6 +1757,7 @@ section {
       <span style="color: var(--color-text-faint);">&middot;</span>
       <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
     </div>
+    <p class="footer__text" style="margin-top: 1rem;">Made by <a href="https://gsmbk.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); text-decoration: none;">Geo Morjane</a></p>
   </div>
 </footer>
 
