@@ -31,7 +31,7 @@ export const guests: Guest[] = [
       "https://www.lennysnewsletter.com/p/anthropics-cpo-heres-what-comes-next",
     date: "Jun 5, 2025",
     duration: "1h 6m",
-    image: "/images/ep-mike-krieger.jpg",
+    image: "https://img.youtube.com/vi/DKrBGOFs0GY/maxresdefault.jpg",
     socials: [
       { label: "X", href: "https://x.com/mikeyk", type: "x" },
       {
@@ -53,7 +53,7 @@ export const guests: Guest[] = [
       "https://www.lennysnewsletter.com/p/anthropic-co-founder-benjamin-mann",
     date: "Jul 20, 2025",
     duration: "1h 15m",
-    image: "/images/ep-benjamin-mann.jpg",
+    image: "https://img.youtube.com/vi/WWoyWNhx2XU/maxresdefault.jpg",
     socials: [
       { label: "X", href: "https://x.com/8enmann", type: "x" },
       {
@@ -75,7 +75,7 @@ export const guests: Guest[] = [
       "https://www.lennysnewsletter.com/p/head-of-claude-code-what-happens",
     date: "Feb 19, 2026",
     duration: "1h 17m",
-    image: "/images/ep-boris-cherny.jpg",
+    image: "https://img.youtube.com/vi/We7BZVKbCVw/maxresdefault.jpg",
     socials: [
       { label: "X", href: "https://x.com/bcherny", type: "x" },
       {
@@ -96,7 +96,7 @@ export const guests: Guest[] = [
     transcriptUrl: "https://www.lennysnewsletter.com/p/the-design-process-is-dead",
     date: "Mar 1, 2026",
     duration: "1h 17m",
-    image: "/images/ep-jenny-wen.jpg",
+    image: "https://img.youtube.com/vi/eh8bcBIAAFo/maxresdefault.jpg",
     socials: [
       { label: "X", href: "https://x.com/jenny_wen", type: "x" },
       {
@@ -210,7 +210,7 @@ export const cultureThemes: CultureTheme[] = [
         attr: "Jenny Wen",
       },
       {
-        text: "Very little grandiosity from the founders — they're clear-eyed about what they're building.",
+        text: "Very little grandiosity from the founders �� they're clear-eyed about what they're building.",
         attr: "Mike Krieger",
       },
     ],
