@@ -368,13 +368,24 @@ section {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  padding: clamp(1.25rem, 2.5vw, 2rem);
+  overflow: hidden;
   transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 .guest-card:hover {
   box-shadow: var(--shadow-md);
   border-color: var(--color-accent);
+}
+
+.guest-card__thumbnail {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.guest-card__body {
+  padding: clamp(1.25rem, 2.5vw, 2rem);
 }
 
 .guest-card__header {
@@ -462,6 +473,8 @@ section {
   display: flex;
   gap: 0.75rem;
   margin-top: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .guest-card__link {
@@ -476,6 +489,33 @@ section {
 
 .guest-card__link:hover {
   opacity: 0.75;
+}
+
+.guest-card__social-links {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-divider);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.guest-card__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.guest-card__social-link:hover {
+  color: var(--color-accent);
+  background: var(--color-accent-light);
 }
 
 /* ===== CULTURE SECTION ===== */
@@ -770,16 +810,17 @@ section {
   border-color: var(--color-accent);
 }
 
-.book-card__icon {
+.book-card__cover {
   flex-shrink: 0;
-  width: 40px;
-  height: 52px;
-  background: var(--color-accent-light);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-accent);
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.book-card__icon {
+  display: none;
 }
 
 .book-card__info {
@@ -821,6 +862,13 @@ section {
 
 .book-card__link:hover {
   opacity: 0.75;
+}
+
+@media (max-width: 400px) {
+  .book-card__cover {
+    width: 64px;
+    height: 96px;
+  }
 }
 
 /* ===== FOOTER ===== */
@@ -943,37 +991,48 @@ section {
     <div class="guests-grid">
       <!-- Mike Krieger -->
       <article class="guest-card fade-in fade-in-delay-1">
-        <div class="guest-card__header">
-          <div class="guest-card__avatar">MK</div>
-          <div>
-            <h3 class="guest-card__name">Mike Krieger</h3>
-            <div class="guest-card__role">Chief Product Officer (CPO)</div>
+        <img src="images/ep-mike-krieger.jpg" alt="Mike Krieger on Lenny's Podcast" class="guest-card__thumbnail" loading="lazy">
+        <div class="guest-card__body">
+          <div class="guest-card__header">
+            <div class="guest-card__avatar">MK</div>
+            <div>
+              <h3 class="guest-card__name">Mike Krieger</h3>
+              <div class="guest-card__role">Chief Product Officer (CPO)</div>
+            </div>
           </div>
-        </div>
-        <p class="guest-card__bio">Co-founder of Instagram. After leaving Meta, co-founded Artifact (AI-powered news app). Joined Anthropic to lead product in 2024.</p>
-        <div class="guest-card__episode">
-          <a href="https://www.youtube.com/watch?v=DKrBGOFs0GY" target="_blank" rel="noopener noreferrer" class="guest-card__episode-title">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
-            Anthropic's CPO on what comes next
-          </a>
-          <div class="guest-card__meta">
-            <span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Jun 5, 2025
-            </span>
-            <span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              1h 6m
-            </span>
-          </div>
-          <div class="guest-card__links">
-            <a href="https://www.youtube.com/watch?v=DKrBGOFs0GY" target="_blank" rel="noopener noreferrer" class="guest-card__link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
-              YouTube
+          <p class="guest-card__bio">Co-founder of Instagram. After leaving Meta, co-founded Artifact (AI-powered news app). Joined Anthropic to lead product in 2024.</p>
+          <div class="guest-card__episode">
+            <a href="https://www.youtube.com/watch?v=DKrBGOFs0GY" target="_blank" rel="noopener noreferrer" class="guest-card__episode-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+              Anthropic's CPO on what comes next
             </a>
-            <a href="https://www.lennysnewsletter.com/p/anthropics-cpo-heres-what-comes-next" target="_blank" rel="noopener noreferrer" class="guest-card__link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Transcript
+            <div class="guest-card__meta">
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Jun 5, 2025
+              </span>
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                1h 6m
+              </span>
+            </div>
+            <div class="guest-card__links">
+              <a href="https://www.youtube.com/watch?v=DKrBGOFs0GY" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+                YouTube
+              </a>
+              <a href="https://www.lennysnewsletter.com/p/anthropics-cpo-heres-what-comes-next" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Transcript
+              </a>
+            </div>
+          </div>
+          <div class="guest-card__social-links">
+            <a href="https://x.com/mikeyk" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Mike Krieger on X">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/mikekrieger/" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Mike Krieger on LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
           </div>
         </div>
@@ -981,37 +1040,51 @@ section {
 
       <!-- Benjamin Mann -->
       <article class="guest-card fade-in fade-in-delay-2">
-        <div class="guest-card__header">
-          <div class="guest-card__avatar">BM</div>
-          <div>
-            <h3 class="guest-card__name">Benjamin Mann</h3>
-            <div class="guest-card__role">Co-founder & Tech Lead, Product Engineering</div>
+        <img src="images/ep-benjamin-mann.jpg" alt="Benjamin Mann on Lenny's Podcast" class="guest-card__thumbnail" loading="lazy">
+        <div class="guest-card__body">
+          <div class="guest-card__header">
+            <div class="guest-card__avatar">BM</div>
+            <div>
+              <h3 class="guest-card__name">Benjamin Mann</h3>
+              <div class="guest-card__role">Co-founder & Tech Lead, Product Engineering</div>
+            </div>
           </div>
-        </div>
-        <p class="guest-card__bio">One of the architects of GPT-3 at OpenAI. Left OpenAI with the safety team to co-found Anthropic.</p>
-        <div class="guest-card__episode">
-          <a href="https://www.youtube.com/watch?v=WWoyWNhx2XU" target="_blank" rel="noopener noreferrer" class="guest-card__episode-title">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
-            Anthropic co-founder on quitting OpenAI, AGI predictions, $100M talent wars
-          </a>
-          <div class="guest-card__meta">
-            <span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Jul 20, 2025
-            </span>
-            <span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              1h 15m
-            </span>
-          </div>
-          <div class="guest-card__links">
-            <a href="https://www.youtube.com/watch?v=WWoyWNhx2XU" target="_blank" rel="noopener noreferrer" class="guest-card__link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
-              YouTube
+          <p class="guest-card__bio">One of the architects of GPT-3 at OpenAI. Left OpenAI with the safety team to co-found Anthropic.</p>
+          <div class="guest-card__episode">
+            <a href="https://www.youtube.com/watch?v=WWoyWNhx2XU" target="_blank" rel="noopener noreferrer" class="guest-card__episode-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+              Anthropic co-founder on quitting OpenAI, AGI predictions, $100M talent wars
             </a>
-            <a href="https://www.lennysnewsletter.com/p/anthropic-co-founder-benjamin-mann" target="_blank" rel="noopener noreferrer" class="guest-card__link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Transcript
+            <div class="guest-card__meta">
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Jul 20, 2025
+              </span>
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                1h 15m
+              </span>
+            </div>
+            <div class="guest-card__links">
+              <a href="https://www.youtube.com/watch?v=WWoyWNhx2XU" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+                YouTube
+              </a>
+              <a href="https://www.lennysnewsletter.com/p/anthropic-co-founder-benjamin-mann" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Transcript
+              </a>
+            </div>
+          </div>
+          <div class="guest-card__social-links">
+            <a href="https://x.com/8enmann" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Benjamin Mann on X">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/benjamin-mann/" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Benjamin Mann on LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://benjmann.net/" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Benjamin Mann's website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </a>
           </div>
         </div>
@@ -1019,37 +1092,51 @@ section {
 
       <!-- Boris Cherny -->
       <article class="guest-card fade-in fade-in-delay-3">
-        <div class="guest-card__header">
-          <div class="guest-card__avatar">BC</div>
-          <div>
-            <h3 class="guest-card__name">Boris Cherny</h3>
-            <div class="guest-card__role">Creator & Head of Claude Code</div>
+        <img src="images/ep-boris-cherny.jpg" alt="Boris Cherny on Lenny's Podcast" class="guest-card__thumbnail" loading="lazy">
+        <div class="guest-card__body">
+          <div class="guest-card__header">
+            <div class="guest-card__avatar">BC</div>
+            <div>
+              <h3 class="guest-card__name">Boris Cherny</h3>
+              <div class="guest-card__role">Creator & Head of Claude Code</div>
+            </div>
           </div>
-        </div>
-        <p class="guest-card__bio">Previously Principal Engineer at Meta for 5 years. Author of <em>Programming TypeScript</em>. Briefly left Anthropic for Cursor, returned after two weeks.</p>
-        <div class="guest-card__episode">
-          <a href="https://www.youtube.com/watch?v=We7BZVKbCVw" target="_blank" rel="noopener noreferrer" class="guest-card__episode-title">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
-            Head of Claude Code: What happens after coding is solved
-          </a>
-          <div class="guest-card__meta">
-            <span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Feb 19, 2026
-            </span>
-            <span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              1h 17m
-            </span>
-          </div>
-          <div class="guest-card__links">
-            <a href="https://www.youtube.com/watch?v=We7BZVKbCVw" target="_blank" rel="noopener noreferrer" class="guest-card__link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
-              YouTube
+          <p class="guest-card__bio">Previously Principal Engineer at Meta for 5 years. Author of <em>Programming TypeScript</em>. Briefly left Anthropic for Cursor, returned after two weeks.</p>
+          <div class="guest-card__episode">
+            <a href="https://www.youtube.com/watch?v=We7BZVKbCVw" target="_blank" rel="noopener noreferrer" class="guest-card__episode-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+              Head of Claude Code: What happens after coding is solved
             </a>
-            <a href="https://www.lennysnewsletter.com/p/head-of-claude-code-what-happens" target="_blank" rel="noopener noreferrer" class="guest-card__link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Transcript
+            <div class="guest-card__meta">
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Feb 19, 2026
+              </span>
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                1h 17m
+              </span>
+            </div>
+            <div class="guest-card__links">
+              <a href="https://www.youtube.com/watch?v=We7BZVKbCVw" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+                YouTube
+              </a>
+              <a href="https://www.lennysnewsletter.com/p/head-of-claude-code-what-happens" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Transcript
+              </a>
+            </div>
+          </div>
+          <div class="guest-card__social-links">
+            <a href="https://x.com/bcherny" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Boris Cherny on X">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/bcherny" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Boris Cherny on LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://borischerny.com" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Boris Cherny's website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </a>
           </div>
         </div>
@@ -1057,37 +1144,54 @@ section {
 
       <!-- Jenny Wen -->
       <article class="guest-card fade-in fade-in-delay-4">
-        <div class="guest-card__header">
-          <div class="guest-card__avatar">JW</div>
-          <div>
-            <h3 class="guest-card__name">Jenny Wen</h3>
-            <div class="guest-card__role">Head of Design for Claude</div>
+        <img src="images/ep-jenny-wen.jpg" alt="Jenny Wen on Lenny's Podcast" class="guest-card__thumbnail" loading="lazy">
+        <div class="guest-card__body">
+          <div class="guest-card__header">
+            <div class="guest-card__avatar">JW</div>
+            <div>
+              <h3 class="guest-card__name">Jenny Wen</h3>
+              <div class="guest-card__role">Head of Design for Claude</div>
+            </div>
           </div>
-        </div>
-        <p class="guest-card__bio">Previously Director of Design at Figma (led FigJam and Slides). Before that, designer at Dropbox, Square, and Shopify.</p>
-        <div class="guest-card__episode">
-          <a href="https://www.youtube.com/watch?v=eh8bcBIAAFo" target="_blank" rel="noopener noreferrer" class="guest-card__episode-title">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
-            The design process is dead. Here's what's replacing it.
-          </a>
-          <div class="guest-card__meta">
-            <span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Mar 1, 2026
-            </span>
-            <span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              1h 17m
-            </span>
-          </div>
-          <div class="guest-card__links">
-            <a href="https://www.youtube.com/watch?v=eh8bcBIAAFo" target="_blank" rel="noopener noreferrer" class="guest-card__link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
-              YouTube
+          <p class="guest-card__bio">Previously Director of Design at Figma (led FigJam and Slides). Before that, designer at Dropbox, Square, and Shopify.</p>
+          <div class="guest-card__episode">
+            <a href="https://www.youtube.com/watch?v=eh8bcBIAAFo" target="_blank" rel="noopener noreferrer" class="guest-card__episode-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+              The design process is dead. Here's what's replacing it.
             </a>
-            <a href="https://www.lennysnewsletter.com/p/the-design-process-is-dead" target="_blank" rel="noopener noreferrer" class="guest-card__link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Transcript
+            <div class="guest-card__meta">
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Mar 1, 2026
+              </span>
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                1h 17m
+              </span>
+            </div>
+            <div class="guest-card__links">
+              <a href="https://www.youtube.com/watch?v=eh8bcBIAAFo" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+                YouTube
+              </a>
+              <a href="https://www.lennysnewsletter.com/p/the-design-process-is-dead" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Transcript
+              </a>
+            </div>
+          </div>
+          <div class="guest-card__social-links">
+            <a href="https://x.com/jenny_wen" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Jenny Wen on X">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/jennywen" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Jenny Wen on LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://jennywen.ca" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Jenny Wen's website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </a>
+            <a href="https://jennywen.substack.com" target="_blank" rel="noopener noreferrer" class="guest-card__social-link" aria-label="Jenny Wen's Substack">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
             </a>
           </div>
         </div>
@@ -1345,6 +1449,7 @@ section {
         </div>
         <div class="books-list">
           <div class="book-card">
+            <img src="images/book-the-goal.jpg" alt="The Goal book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1358,6 +1463,7 @@ section {
             </div>
           </div>
           <div class="book-card">
+            <img src="images/book-hard-thing.jpg" alt="The Hard Thing About Hard Things book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1371,6 +1477,7 @@ section {
             </div>
           </div>
           <div class="book-card">
+            <img src="images/book-way-of-code.png" alt="The Way of the Code book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1394,6 +1501,7 @@ section {
         </div>
         <div class="books-list">
           <div class="book-card">
+            <img src="images/book-superintelligence.jpg" alt="Superintelligence book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1407,6 +1515,7 @@ section {
             </div>
           </div>
           <div class="book-card">
+            <img src="images/book-hacker-state.jpg" alt="The Hacker and the State book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1420,6 +1529,7 @@ section {
             </div>
           </div>
           <div class="book-card">
+            <img src="images/book-replacing-guilt.png" alt="Replacing Guilt book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1433,6 +1543,7 @@ section {
             </div>
           </div>
           <div class="book-card">
+            <img src="images/book-good-strategy.jpg" alt="Good Strategy Bad Strategy book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1446,6 +1557,7 @@ section {
             </div>
           </div>
           <div class="book-card">
+            <img src="images/book-alignment-problem.jpg" alt="The Alignment Problem book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1469,6 +1581,7 @@ section {
         </div>
         <div class="books-list">
           <div class="book-card">
+            <img src="images/book-fp-scala.jpg" alt="Functional Programming in Scala book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1483,6 +1596,7 @@ section {
             </div>
           </div>
           <div class="book-card">
+            <img src="images/book-accelerando.jpg" alt="Accelerando book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1497,6 +1611,7 @@ section {
             </div>
           </div>
           <div class="book-card">
+            <img src="images/book-wandering-earth.jpg" alt="The Wandering Earth book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1511,6 +1626,7 @@ section {
             </div>
           </div>
           <div class="book-card">
+            <img src="images/book-three-body.jpg" alt="The Three-Body Problem book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1524,6 +1640,7 @@ section {
             </div>
           </div>
           <div class="book-card">
+            <img src="images/book-fire-deep.jpg" alt="A Fire Upon the Deep book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1537,6 +1654,7 @@ section {
             </div>
           </div>
           <div class="book-card">
+            <img src="images/book-deepness-sky.jpg" alt="A Deepness in the Sky book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1560,6 +1678,7 @@ section {
         </div>
         <div class="books-list">
           <div class="book-card">
+            <img src="images/book-power-broker.jpg" alt="The Power Broker book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1574,6 +1693,7 @@ section {
             </div>
           </div>
           <div class="book-card">
+            <img src="images/book-insomniac-city.jpg" alt="Insomniac City book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
@@ -1588,6 +1708,7 @@ section {
             </div>
           </div>
           <div class="book-card">
+            <img src="images/book-radical-candor.jpg" alt="Radical Candor book cover" class="book-card__cover" loading="lazy">
             <div class="book-card__icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
