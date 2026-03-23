@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Insights from four Anthropic leaders on culture, products, skills, and recommended reading — drawn from their conversations with Lenny Rachitsky">
+<meta property="og:title" content="Anthropic on Lenny's Podcast">
+<meta property="og:description" content="Insights from four Anthropic leaders on culture, products, skills, and recommended reading.">
+<title>Anthropic on Lenny's Podcast</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  min-height: 100dvh;
+  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+a { text-decoration: none; color: inherit; }
+ul, ol { list-style: none; }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; line-height: 1.15; }
+p, li, figcaption { text-wrap: pretty; max-width: 72ch; }
+
+/* ===== CSS CUSTOM PROPERTIES ===== */
+:root, [data-theme="light"] {
+  --color-bg: #FAF9F7;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #F5F3F0;
+  --color-text: #191919;
+  --color-text-muted: #6B6560;
+  --color-text-faint: #A8A29E;
+  --color-accent: #CC785C;
+  --color-accent-hover: #B5694F;
+  --color-accent-light: rgba(204, 120, 92, 0.1);
+  --color-accent-lighter: rgba(204, 120, 92, 0.05);
+  --color-border: #E8E4DC;
+  --color-divider: #EDE9E3;
+  --shadow-sm: 0 1px 3px rgba(25, 25, 25, 0.04);
+  --shadow-md: 0 4px 16px rgba(25, 25, 25, 0.06);
+  --shadow-lg: 0 12px 40px rgba(25, 25, 25, 0.08);
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+}
+
+[data-theme="dark"] {
+  --color-bg: #191919;
+  --color-surface: #1E1E1C;
+  --color-surface-2: #252523;
+  --color-text: #E8E4DC;
+  --color-text-muted: #9B9590;
+  --color-text-faint: #5C5854;
+  --color-accent: #D4A27F;
+  --color-accent-hover: #E0B595;
+  --color-accent-light: rgba(212, 162, 127, 0.12);
+  --color-accent-lighter: rgba(212, 162, 127, 0.06);
+  --color-border: #2E2E2C;
+  --color-divider: #2A2A28;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #191919;
+    --color-surface: #1E1E1C;
+    --color-surface-2: #252523;
+    --color-text: #E8E4DC;
+    --color-text-muted: #9B9590;
+    --color-text-faint: #5C5854;
+    --color-accent: #D4A27F;
+    --color-accent-hover: #E0B595;
+    --color-accent-light: rgba(212, 162, 127, 0.12);
+    --color-accent-lighter: rgba(212, 162, 127, 0.06);
+    --color-border: #2E2E2C;
+    --color-divider: #2A2A28;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+::selection {
+  background: var(--color-accent-light);
+  color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+.container--narrow {
+  max-width: 900px;
+}
+
+section {
+  padding-block: clamp(3rem, 8vw, 6rem);
+}
+
+/* ===== HEADER / NAV ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-divider);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.header--scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.header__logo {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+  color: var(--color-text);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.header__logo span {
+  color: var(--color-accent);
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.header__nav a {
+  font-size: 0.875rem;
+  font-weight: 450;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.header__nav a:hover {
+  color: var(--color-accent);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+}
+
+/* Mobile nav */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--color-text);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-divider);
+    padding: 1.5rem;
+    gap: 1rem;
+    box-shadow: var(--shadow-md);
+  }
+  .header__nav.active {
+    display: flex;
+  }
+  .header__nav a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding-block: clamp(4rem, 12vw, 8rem) clamp(3rem, 8vw, 6rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, var(--color-accent-lighter) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.hero__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.hero__subtitle {
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.15rem);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ===== SECTION HEADINGS ===== */
+.section-header {
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.section-header__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.section-header__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.section-header__desc {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+  max-width: 600px;
+}
+
+/* ===== GUEST CARDS ===== */
+.guests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+@media (max-width: 700px) {
+  .guests-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.guest-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.guest-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
+}
+
+.guest-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.guest-card__avatar {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.guest-card__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  font-weight: 400;
+  margin-bottom: 0.15rem;
+}
+
+.guest-card__role {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.guest-card__bio {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+.guest-card__episode {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-divider);
+}
+
+.guest-card__episode-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.guest-card__episode-title:hover {
+  color: var(--color-accent);
+}
+
+.guest-card__episode-title svg {
+  flex-shrink: 0;
+}
+
+.guest-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--color-text-faint);
+}
+
+.guest-card__meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.guest-card__links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.guest-card__link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: opacity 0.2s ease;
+}
+
+.guest-card__link:hover {
+  opacity: 0.75;
+}
+
+/* ===== CULTURE SECTION ===== */
+.culture-section {
+  background: var(--color-surface-2);
+}
+
+.culture-themes {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.culture-theme {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .culture-theme {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.culture-theme__label {
+  position: sticky;
+  top: 80px;
+}
+
+.culture-theme__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.culture-theme__name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.culture-quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quote-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.quote-card:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: color-mix(in srgb, var(--color-accent) 30%, var(--color-border));
+}
+
+.quote-card__text {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+.quote-card__text em {
+  font-style: italic;
+  font-family: var(--font-display);
+  font-size: 1.02em;
+}
+
+.quote-card__attr {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+/* ===== SKILLS SECTION ===== */
+.skills-highlight {
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: 14px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-highlight::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.skills-highlight__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 1rem + 1.5vw, 2rem);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.skills-highlight__text {
+  font-size: 1rem;
+  line-height: 1.65;
+  opacity: 0.92;
+  max-width: 600px;
+  position: relative;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+@media (max-width: 700px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skill-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
+}
+
+.skill-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.skill-card__name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.skill-card__text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.skill-card__text strong {
+  color: var(--color-text);
+  font-weight: 550;
+}
+
+/* ===== PRODUCTS SECTION ===== */
+.products-section {
+  background: var(--color-surface-2);
+}
+
+.products-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.product-row {
+  display: grid;
+  grid-template-columns: 200px 180px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.product-row:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .product-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.product-row__name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.product-row__who {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.product-row__desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* ===== BOOKS SECTION ===== */
+.books-recommenders {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 4rem);
+}
+
+.books-recommender__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.books-recommender__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+}
+
+.books-recommender__name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.books-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+.book-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.book-card:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-accent);
+}
+
+.book-card__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 52px;
+  background: var(--color-accent-light);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+}
+
+.book-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.book-card__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+  line-height: 1.3;
+}
+
+.book-card__author {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.book-card__note {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--color-text-faint);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.book-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  transition: opacity 0.2s ease;
+}
+
+.book-card__link:hover {
+  opacity: 0.75;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  border-top: 1px solid var(--color-divider);
+  padding-block: 2.5rem;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.footer__text {
+  font-size: 0.8rem;
+  color: var(--color-text-faint);
+  line-height: 1.6;
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__links a {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.footer__links a:hover {
+  color: var(--color-accent);
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-delay-1 { transition-delay: 0.08s; }
+.fade-in-delay-2 { transition-delay: 0.16s; }
+.fade-in-delay-3 { transition-delay: 0.24s; }
+.fade-in-delay-4 { transition-delay: 0.32s; }
+
+/* ===== UTILITY ===== */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+}
+
+/* Divider */
+.section-divider {
+  width: 48px;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 1px;
+  opacity: 0.5;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#" class="header__logo">Anthropic <span>&times;</span> Lenny's</a>
+    <nav class="header__nav" id="nav">
+      <a href="#guests">Guests</a>
+      <a href="#culture">Culture</a>
+      <a href="#skills">Skills</a>
+      <a href="#products">Products</a>
+      <a href="#books">Books</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__label fade-in">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+      Four Episodes &middot; Four Leaders
+    </div>
+    <h1 class="hero__title fade-in">Anthropic on Lenny's Podcast</h1>
+    <p class="hero__subtitle fade-in">Insights from four Anthropic leaders on culture, products, skills, and recommended reading — drawn from their conversations with Lenny Rachitsky</p>
+  </div>
+</section>
+
+<!-- ===== GUESTS ===== -->
+<section id="guests">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-header__label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        The Guests
+      </div>
+      <h2 class="section-header__title">Four Anthropic Leaders</h2>
+    </div>
+
+    <div class="guests-grid">
+      <!-- Mike Krieger -->
+      <article class="guest-card fade-in fade-in-delay-1">
+        <div class="guest-card__header">
+          <div class="guest-card__avatar">MK</div>
+          <div>
+            <h3 class="guest-card__name">Mike Krieger</h3>
+            <div class="guest-card__role">Chief Product Officer (CPO)</div>
+          </div>
+        </div>
+        <p class="guest-card__bio">Co-founder of Instagram. After leaving Meta, co-founded Artifact (AI-powered news app). Joined Anthropic to lead product in 2024.</p>
+        <div class="guest-card__episode">
+          <a href="https://www.youtube.com/watch?v=DKrBGOFs0GY" target="_blank" rel="noopener noreferrer" class="guest-card__episode-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+            Anthropic's CPO on what comes next
+          </a>
+          <div class="guest-card__meta">
+            <span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Jun 5, 2025
+            </span>
+            <span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              1h 6m
+            </span>
+          </div>
+          <div class="guest-card__links">
+            <a href="https://www.youtube.com/watch?v=DKrBGOFs0GY" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+              YouTube
+            </a>
+            <a href="https://www.lennysnewsletter.com/p/anthropics-cpo-heres-what-comes-next" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Transcript
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Benjamin Mann -->
+      <article class="guest-card fade-in fade-in-delay-2">
+        <div class="guest-card__header">
+          <div class="guest-card__avatar">BM</div>
+          <div>
+            <h3 class="guest-card__name">Benjamin Mann</h3>
+            <div class="guest-card__role">Co-founder & Tech Lead, Product Engineering</div>
+          </div>
+        </div>
+        <p class="guest-card__bio">One of the architects of GPT-3 at OpenAI. Left OpenAI with the safety team to co-found Anthropic.</p>
+        <div class="guest-card__episode">
+          <a href="https://www.youtube.com/watch?v=WWoyWNhx2XU" target="_blank" rel="noopener noreferrer" class="guest-card__episode-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+            Anthropic co-founder on quitting OpenAI, AGI predictions, $100M talent wars
+          </a>
+          <div class="guest-card__meta">
+            <span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Jul 20, 2025
+            </span>
+            <span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              1h 15m
+            </span>
+          </div>
+          <div class="guest-card__links">
+            <a href="https://www.youtube.com/watch?v=WWoyWNhx2XU" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+              YouTube
+            </a>
+            <a href="https://www.lennysnewsletter.com/p/anthropic-co-founder-benjamin-mann" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Transcript
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Boris Cherny -->
+      <article class="guest-card fade-in fade-in-delay-3">
+        <div class="guest-card__header">
+          <div class="guest-card__avatar">BC</div>
+          <div>
+            <h3 class="guest-card__name">Boris Cherny</h3>
+            <div class="guest-card__role">Creator & Head of Claude Code</div>
+          </div>
+        </div>
+        <p class="guest-card__bio">Previously Principal Engineer at Meta for 5 years. Author of <em>Programming TypeScript</em>. Briefly left Anthropic for Cursor, returned after two weeks.</p>
+        <div class="guest-card__episode">
+          <a href="https://www.youtube.com/watch?v=We7BZVKbCVw" target="_blank" rel="noopener noreferrer" class="guest-card__episode-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+            Head of Claude Code: What happens after coding is solved
+          </a>
+          <div class="guest-card__meta">
+            <span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Feb 19, 2026
+            </span>
+            <span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              1h 17m
+            </span>
+          </div>
+          <div class="guest-card__links">
+            <a href="https://www.youtube.com/watch?v=We7BZVKbCVw" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+              YouTube
+            </a>
+            <a href="https://www.lennysnewsletter.com/p/head-of-claude-code-what-happens" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Transcript
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Jenny Wen -->
+      <article class="guest-card fade-in fade-in-delay-4">
+        <div class="guest-card__header">
+          <div class="guest-card__avatar">JW</div>
+          <div>
+            <h3 class="guest-card__name">Jenny Wen</h3>
+            <div class="guest-card__role">Head of Design for Claude</div>
+          </div>
+        </div>
+        <p class="guest-card__bio">Previously Director of Design at Figma (led FigJam and Slides). Before that, designer at Dropbox, Square, and Shopify.</p>
+        <div class="guest-card__episode">
+          <a href="https://www.youtube.com/watch?v=eh8bcBIAAFo" target="_blank" rel="noopener noreferrer" class="guest-card__episode-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+            The design process is dead. Here's what's replacing it.
+          </a>
+          <div class="guest-card__meta">
+            <span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Mar 1, 2026
+            </span>
+            <span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              1h 17m
+            </span>
+          </div>
+          <div class="guest-card__links">
+            <a href="https://www.youtube.com/watch?v=eh8bcBIAAFo" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12l-22 12V0z"/></svg>
+              YouTube
+            </a>
+            <a href="https://www.lennysnewsletter.com/p/the-design-process-is-dead" target="_blank" rel="noopener noreferrer" class="guest-card__link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Transcript
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CULTURE ===== -->
+<section id="culture" class="culture-section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-header__label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Culture
+      </div>
+      <h2 class="section-header__title">What Makes Anthropic Different</h2>
+      <p class="section-header__desc">Key themes that emerged across all four conversations about Anthropic's culture.</p>
+    </div>
+
+    <div class="culture-themes">
+
+      <!-- Safety-First Mission -->
+      <div class="culture-theme fade-in">
+        <div class="culture-theme__label">
+          <div class="culture-theme__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="culture-theme__name">Safety-First Mission</h3>
+        </div>
+        <div class="culture-quotes">
+          <div class="quote-card">
+            <p class="quote-card__text">&ldquo;If you ask anyone in the hallway why they&rsquo;re here, the answer is always going to be safety.&rdquo;</p>
+            <div class="quote-card__attr">Boris Cherny</div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">&ldquo;Intellectual honesty and a shared view of what it means to do AI responsibly.&rdquo;</p>
+            <div class="quote-card__attr">Mike Krieger, on Anthropic&rsquo;s founders</div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">The company was founded when the entire safety team left OpenAI because safety wasn&rsquo;t being prioritized.</p>
+            <div class="quote-card__attr">Ben Mann</div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">Mission alignment trumps financial incentives, helping retain talent despite $100M+ competitor offers.</p>
+            <div class="quote-card__attr">Ben Mann</div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">Constitutional AI creates Claude&rsquo;s beloved personality as a direct result of the safety focus.</p>
+            <div class="quote-card__attr">Ben Mann</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speed & Experimentation -->
+      <div class="culture-theme fade-in">
+        <div class="culture-theme__label">
+          <div class="culture-theme__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3 class="culture-theme__name">Speed & Experimentation</h3>
+        </div>
+        <div class="culture-quotes">
+          <div class="quote-card">
+            <p class="quote-card__text">&ldquo;No roadmap for innovation. Give people space and psychological safety that it&rsquo;s okay to fail. 80% of ideas being bad is okay.&rdquo;</p>
+            <div class="quote-card__attr">Boris Cherny</div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">&ldquo;Building trust through speed — continuously shipping and improving.&rdquo;</p>
+            <div class="quote-card__attr">Jenny Wen</div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">Claude Cowork was built in just 10 days from internal prototype to external launch.</p>
+            <div class="quote-card__attr">Boris Cherny &amp; Jenny Wen</div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">Give engineers unlimited tokens so they&rsquo;re free to try crazy ideas.</p>
+            <div class="quote-card__attr">Boris Cherny</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Excellence -->
+      <div class="culture-theme fade-in">
+        <div class="culture-theme__label">
+          <div class="culture-theme__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 class="culture-theme__name">Technical Excellence</h3>
+        </div>
+        <div class="culture-quotes">
+          <div class="quote-card">
+            <p class="quote-card__text">&ldquo;Everyone is fairly technical — even for non-technical functions. Designers largely code.&rdquo;</p>
+            <div class="quote-card__attr">Boris Cherny</div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">90-95% of code is written by AI; 70%+ of pull requests are Claude-generated.</p>
+            <div class="quote-card__attr">Mike Krieger</div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">4&times; engineering team growth while productivity per engineer increased 200%.</p>
+            <div class="quote-card__attr">Boris Cherny</div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">The Claude Code team uses Claude Code to build Claude Code in a self-improving loop.</p>
+            <div class="quote-card__attr">Mike Krieger</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collaborative & Humble -->
+      <div class="culture-theme fade-in">
+        <div class="culture-theme__label">
+          <div class="culture-theme__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="culture-theme__name">Collaborative & Humble</h3>
+        </div>
+        <div class="culture-quotes">
+          <div class="quote-card">
+            <p class="quote-card__text">&ldquo;The Anthropic Design team — really humble, doing great work, resilient, spanning from technical prototypers to high-craft specialists.&rdquo;</p>
+            <div class="quote-card__attr">Jenny Wen</div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">&ldquo;The best teams roast each other — psychological safety combined with high standards.&rdquo;</p>
+            <div class="quote-card__attr">Jenny Wen</div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">Slack is a gold mine of ideas and prototypes.</p>
+            <div class="quote-card__attr">Jenny Wen</div>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">&ldquo;Very little grandiosity from the founders — they&rsquo;re cleareyed about what they&rsquo;re building.&rdquo;</p>
+            <div class="quote-card__attr">Mike Krieger</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-header__label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Most Important Skill
+      </div>
+      <h2 class="section-header__title">What It Takes to Join Anthropic</h2>
+    </div>
+
+    <div class="skills-highlight fade-in">
+      <h3 class="skills-highlight__title">The single thread across all four interviews</h3>
+      <p class="skills-highlight__text">Be deeply curious, technically proficient, and willing to build with AI tools at the frontier. Every guest emphasized that the people who thrive at Anthropic are those who lean into new tools, think from first principles, and never stop learning.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card fade-in fade-in-delay-1">
+        <div class="skill-card__avatar">MK</div>
+        <h4 class="skill-card__name">Mike Krieger</h4>
+        <p class="skill-card__text">&ldquo;I&rsquo;m a huge believer in the <strong>founding engineer / tech lead with an idea</strong> — pair them with design and product support. I&rsquo;m 10 times more a believer in that than before.&rdquo; Values <strong>curiosity, scientific thinking, and independent inquiry</strong>.</p>
+      </div>
+      <div class="skill-card fade-in fade-in-delay-2">
+        <div class="skill-card__avatar">BM</div>
+        <h4 class="skill-card__name">Benjamin Mann</h4>
+        <p class="skill-card__text">&ldquo;Be <strong>ambitious in how you use AI tools</strong>. People who use new tools as if they were old tools tend to not succeed.&rdquo; Teaches his kids: <strong>curiosity, creativity, self-led learning, and kindness</strong>. &ldquo;Facts are going to fade into the background.&rdquo;</p>
+      </div>
+      <div class="skill-card fade-in fade-in-delay-3">
+        <div class="skill-card__avatar">BC</div>
+        <h4 class="skill-card__name">Boris Cherny</h4>
+        <p class="skill-card__text">&ldquo;Everyone on the team codes — product managers, engineering managers, designers, finance, data scientists.&rdquo; Seeks people who are <strong>&ldquo;AI-native, curious, and generalists.&rdquo;</strong> Emphasizes speed, common sense, and first-principles thinking.</p>
+      </div>
+      <div class="skill-card fade-in fade-in-delay-4">
+        <div class="skill-card__avatar">JW</div>
+        <h4 class="skill-card__name">Jenny Wen</h4>
+        <p class="skill-card__text">Three hiring archetypes: <strong>(1) Strong Generalists</strong> (80th percentile in multiple skills), <strong>(2) Deep Specialists</strong> (top 10% in their area), <strong>(3) Craft New Grads</strong> (wise beyond years, humble, unburdened by old processes). Values resilience, adaptability, and excitement about frontier tech.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section id="products" class="products-section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-header__label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        Products
+      </div>
+      <h2 class="section-header__title">What Excites Them</h2>
+      <p class="section-header__desc">The products and capabilities the guests are most passionate about.</p>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-row fade-in">
+        <div class="product-row__name">Claude Code</div>
+        <div class="product-row__who">Boris Cherny, Mike Krieger, Ben Mann</div>
+        <div class="product-row__desc">&ldquo;100% of my code is AI-written since November. Haven&rsquo;t edited a single line by hand.&rdquo; Grew to 4% of public GitHub commits. Even legal and finance teams get massive value.</div>
+      </div>
+      <div class="product-row fade-in">
+        <div class="product-row__name">Cowork</div>
+        <div class="product-row__who">Boris Cherny, Jenny Wen</div>
+        <div class="product-row__desc">&ldquo;Built in 10 days. I use it every day — paid a parking ticket, all my project management. Tested against 50 non-technical use cases, passed 48/50. Life-changing.&rdquo;</div>
+      </div>
+      <div class="product-row fade-in">
+        <div class="product-row__name">MCP (Model Context Protocol)</div>
+        <div class="product-row__who">Mike Krieger, Ben Mann</div>
+        <div class="product-row__desc">&ldquo;May reshape how all software works. The fastest growing standard — Microsoft adopted it into Windows. Everything becomes scriptable and composable.&rdquo;</div>
+      </div>
+      <div class="product-row fade-in">
+        <div class="product-row__name">Constitutional AI</div>
+        <div class="product-row__who">Ben Mann</div>
+        <div class="product-row__desc">&ldquo;The model critiques and improves itself based on natural language principles. Claude&rsquo;s beloved personality is a direct result of this safety-focused approach.&rdquo;</div>
+      </div>
+      <div class="product-row fade-in">
+        <div class="product-row__name">Claude Opus 4</div>
+        <div class="product-row__who">Mike Krieger</div>
+        <div class="product-row__desc">&ldquo;My go-to product strategy partner — praised for independence, creativity, and novelty of thought.&rdquo;</div>
+      </div>
+      <div class="product-row fade-in">
+        <div class="product-row__name">Prompt Improver</div>
+        <div class="product-row__who">Mike Krieger</div>
+        <div class="product-row__desc">&ldquo;Describe your problem, give examples, and Claude agentically creates and iterates on a prompt for you.&rdquo;</div>
+      </div>
+      <div class="product-row fade-in">
+        <div class="product-row__name">Anthropic Model Family</div>
+        <div class="product-row__who">Boris Cherny</div>
+        <div class="product-row__desc">Opus 4.6 (best for coding), Sonnet 4, Haiku — a trajectory from coding to tool use to computer use.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOOKS ===== -->
+<section id="books">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-header__label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Reading List
+      </div>
+      <h2 class="section-header__title">Book Recommendations</h2>
+      <p class="section-header__desc">What Anthropic's leaders are reading — from AI safety to sci-fi to management classics.</p>
+    </div>
+
+    <div class="books-recommenders">
+
+      <!-- Mike Krieger -->
+      <div class="fade-in">
+        <div class="books-recommender__header">
+          <div class="books-recommender__avatar">MK</div>
+          <h3 class="books-recommender__name">Mike Krieger recommends</h3>
+        </div>
+        <div class="books-list">
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">The Goal: A Process of Ongoing Improvement</div>
+              <div class="book-card__author">Eliyahu M. Goldratt</div>
+              <a href="https://www.audible.com/pd/The-Goal-Audiobook/B00IFG88SM" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">The Hard Thing About Hard Things</div>
+              <div class="book-card__author">Ben Horowitz</div>
+              <a href="https://www.audible.com/pd/The-Hard-Thing-About-Hard-Things-Audiobook/B00I0AJC2Y" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">The Way of the Code: The Timeless Art of Vibe Coding</div>
+              <div class="book-card__author">Rick Rubin &times; Anthropic</div>
+              <a href="https://www.thewayofcode.com/" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Website
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benjamin Mann -->
+      <div class="fade-in">
+        <div class="books-recommender__header">
+          <div class="books-recommender__avatar">BM</div>
+          <h3 class="books-recommender__name">Benjamin Mann recommends</h3>
+        </div>
+        <div class="books-list">
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">Superintelligence: Paths, Dangers, Strategies</div>
+              <div class="book-card__author">Nick Bostrom</div>
+              <a href="https://www.audible.com/pd/Superintelligence-Audiobook/B00LPMD72K" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">The Hacker and the State</div>
+              <div class="book-card__author">Ben Buchanan</div>
+              <a href="https://www.audible.com/pd/The-Hacker-and-the-State-Audiobook/1705231926" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">Replacing Guilt: Minding Our Way</div>
+              <div class="book-card__author">Nate Soares</div>
+              <a href="https://podcasts.apple.com/us/podcast/replacing-guilt-full-audiobook/id1498321446?i=1000526818550" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">Good Strategy/Bad Strategy</div>
+              <div class="book-card__author">Richard Rumelt</div>
+              <a href="https://www.audible.com/pd/Good-Strategy-Bad-Strategy-Audiobook/0593162927" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">The Alignment Problem</div>
+              <div class="book-card__author">Brian Christian</div>
+              <a href="https://www.audible.com/pd/The-Alignment-Problem-Audiobook/1536695173" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Boris Cherny -->
+      <div class="fade-in">
+        <div class="books-recommender__header">
+          <div class="books-recommender__avatar">BC</div>
+          <h3 class="books-recommender__name">Boris Cherny recommends</h3>
+        </div>
+        <div class="books-list">
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">Functional Programming in Scala</div>
+              <div class="book-card__author">Paul Chiusano & R&uacute;nar Bjarnason</div>
+              <div class="book-card__note">&ldquo;The single best technical book I&rsquo;ve ever read.&rdquo;</div>
+              <a href="https://www.audible.com/pd/Functional-Programming-in-Scala-Audiobook/B07M9ZDLNG" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">Accelerando</div>
+              <div class="book-card__author">Charles Stross</div>
+              <div class="book-card__note">&ldquo;Captures the essence of this moment we&rsquo;re in — the pace gets faster and faster.&rdquo;</div>
+              <a href="https://www.audible.com/pd/Accelerando-Audiobook/B00J3542OI" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">The Wandering Earth</div>
+              <div class="book-card__author">Liu Cixin</div>
+              <div class="book-card__note">&ldquo;Really amazing stories. Interesting Chinese sci-fi perspective.&rdquo;</div>
+              <a href="https://www.audible.com/pd/The-Wandering-Earth-Audiobook/1250819024" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">The Three-Body Problem</div>
+              <div class="book-card__author">Liu Cixin</div>
+              <a href="https://www.audible.com/pd/The-Three-Body-Problem-Audiobook/B0CTRZ4XGN" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">A Fire Upon the Deep</div>
+              <div class="book-card__author">Vernor Vinge</div>
+              <a href="https://www.audible.com/pd/A-Fire-Upon-the-Deep-Audiobook/B0036N2C7M" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">A Deepness in the Sky</div>
+              <div class="book-card__author">Vernor Vinge</div>
+              <a href="https://www.audible.com/pd/A-Deepness-in-the-Sky-Audiobook/B0030GOEUS" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jenny Wen -->
+      <div class="fade-in">
+        <div class="books-recommender__header">
+          <div class="books-recommender__avatar">JW</div>
+          <h3 class="books-recommender__name">Jenny Wen recommends</h3>
+        </div>
+        <div class="books-list">
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">The Power Broker</div>
+              <div class="book-card__author">Robert Caro</div>
+              <div class="book-card__note">&ldquo;1,100 pages worth reading end to end. Understanding how somebody just gets things done.&rdquo;</div>
+              <a href="https://www.audible.com/pd/The-Power-Broker-Audiobook/B0051JH67K" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">Insomniac City: New York, Oliver Sacks, and Me</div>
+              <div class="book-card__author">Bill Hayes</div>
+              <div class="book-card__note">&ldquo;Beautiful ethereal memoir. Makes you think about mortality, love, and life.&rdquo;</div>
+              <a href="https://www.audible.com/pd/Insomniac-City-Audiobook/B01N5QDPH3" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-card__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="book-card__info">
+              <div class="book-card__title">Radical Candor</div>
+              <div class="book-card__author">Kim Scott</div>
+              <a href="https://www.audible.com/pd/Radical-Candor-Audiobook/B01MZ6RMS4" target="_blank" rel="noopener noreferrer" class="book-card__link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zm-18 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                Audiobook
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__text">Data gathered from Lenny&rsquo;s Podcast episodes. Sources linked throughout.</p>
+    <div class="footer__links">
+      <a href="https://www.lennysnewsletter.com/podcast" target="_blank" rel="noopener noreferrer">Lenny&rsquo;s Podcast</a>
+      <span style="color: var(--color-text-faint);">&middot;</span>
+      <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer">Anthropic</a>
+      <span style="color: var(--color-text-faint);">&middot;</span>
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== Theme Toggle =====
+(function() {
+  const toggle = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  root.setAttribute('data-theme', theme);
+
+  function updateIcon() {
+    if (!toggle) return;
+    toggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+    toggle.innerHTML = theme === 'dark'
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
+  updateIcon();
+
+  if (toggle) {
+    toggle.addEventListener('click', function() {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', theme);
+      updateIcon();
+    });
+  }
+})();
+
+// ===== Header Scroll Effect =====
+(function() {
+  const header = document.getElementById('header');
+  let lastScroll = 0;
+  window.addEventListener('scroll', function() {
+    const scroll = window.scrollY;
+    if (scroll > 10) {
+      header.classList.add('header--scrolled');
+    } else {
+      header.classList.remove('header--scrolled');
+    }
+    lastScroll = scroll;
+  }, { passive: true });
+})();
+
+// ===== Mobile Menu =====
+(function() {
+  const btn = document.getElementById('mobileMenuBtn');
+  const nav = document.getElementById('nav');
+  if (btn && nav) {
+    btn.addEventListener('click', function() {
+      nav.classList.toggle('active');
+    });
+    // Close menu when a nav link is clicked
+    nav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        nav.classList.remove('active');
+      });
+    });
+  }
+})();
+
+// ===== Intersection Observer for fade-in animations =====
+(function() {
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  document.querySelectorAll('.fade-in').forEach(function(el) {
+    observer.observe(el);
+  });
+})();
+</script>
+
+</body>
+</html>
