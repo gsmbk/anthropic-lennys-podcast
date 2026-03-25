@@ -192,11 +192,11 @@ section {
 .header__nav {
   display: flex;
   align-items: center;
-  gap: clamp(1rem, 2vw, 2rem);
+  gap: clamp(0.5rem, 1.2vw, 1.25rem);
 }
 
 .header__nav a {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 450;
   color: var(--color-text-muted);
   transition: color 0.2s ease;
@@ -239,7 +239,7 @@ section {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mobile-menu-btn {
     display: flex;
   }
@@ -253,14 +253,14 @@ section {
     background: var(--color-bg);
     border-bottom: 1px solid var(--color-divider);
     padding: 1.5rem;
-    gap: 1rem;
+    gap: 0.5rem;
     box-shadow: var(--shadow-md);
   }
   .header__nav.active {
     display: flex;
   }
   .header__nav a {
-    font-size: 1rem;
+    font-size: 0.95rem;
     padding: 0.5rem 0;
   }
 }
@@ -923,6 +923,117 @@ section {
   color: var(--color-accent);
 }
 
+/* ===== INSIGHT CARDS (New Sections) ===== */
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+@media (max-width: 700px) {
+  .insight-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.insight-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.insight-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
+}
+
+.insight-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.insight-card__avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+}
+
+.insight-card__speaker {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.insight-card__heading {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.insight-card__text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* Highlighted insight card (accent bg) */
+.insight-card--highlight {
+  background: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
+  position: relative;
+  overflow: hidden;
+}
+
+.insight-card--highlight::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.insight-card--highlight:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent-hover);
+}
+
+.insight-card--highlight .insight-card__avatar {
+  background: rgba(255,255,255,0.2);
+}
+
+.insight-card--highlight .insight-card__speaker {
+  color: rgba(255,255,255,0.85);
+}
+
+.insight-card--highlight .insight-card__heading {
+  color: #fff;
+  position: relative;
+}
+
+.insight-card--highlight .insight-card__text {
+  color: rgba(255,255,255,0.9);
+  position: relative;
+}
+
 /* ===== ANIMATIONS ===== */
 .fade-in {
   opacity: 0;
@@ -968,6 +1079,11 @@ section {
       <a href="#culture">Culture</a>
       <a href="#skills">Skills</a>
       <a href="#products">Products</a>
+      <a href="#predictions">Predictions</a>
+      <a href="#design">Design</a>
+      <a href="#stories">Stories</a>
+      <a href="#strategy">Strategy</a>
+      <a href="#parenting">Parenting</a>
       <a href="#books">Books</a>
       <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -1441,6 +1557,251 @@ section {
         <div class="product-row__who">Boris Cherny</div>
         <div class="product-row__desc">Opus 4.6 (best for coding), Sonnet 4, Haiku — a trajectory from coding to tool use to computer use.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PREDICTIONS ===== -->
+<section id="predictions">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-header__label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        Bold Predictions
+      </div>
+      <h2 class="section-header__title">On the Future of AI</h2>
+      <p class="section-header__desc">The most striking forecasts and frameworks from across all four conversations.</p>
+    </div>
+
+    <div class="insight-grid">
+      <article class="insight-card insight-card--highlight fade-in fade-in-delay-1">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">BM</div>
+          <div class="insight-card__speaker">Benjamin Mann</div>
+        </div>
+        <h3 class="insight-card__heading">AGI by 2028</h3>
+        <p class="insight-card__text">&ldquo;I think 50th percentile chance of hitting some kind of superintelligence is now like 2028.&rdquo; Ben believes AI progress is still accelerating &mdash; not plateauing &mdash; and most people badly misjudge the exponential curve.</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-2">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">BM</div>
+          <div class="insight-card__speaker">Benjamin Mann</div>
+        </div>
+        <h3 class="insight-card__heading">The Economic Turing Test</h3>
+        <p class="insight-card__text">Ben&rsquo;s framework for measuring AGI: hire an AI agent and a human contractor for the same job for a month. If the manager prefers the AI at the end, it&rsquo;s passed. Apply this to a market basket of 50% of economically valuable jobs, and you have transformative AI.</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-1">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">BM</div>
+          <div class="insight-card__speaker">Benjamin Mann</div>
+        </div>
+        <h3 class="insight-card__heading">20% Unemployment Is Inevitable</h3>
+        <p class="insight-card__text">&ldquo;If you just think about 20 years in the future where we&rsquo;re way past the singularity, it&rsquo;s hard for me to imagine that even capitalism will look at all like it looks today.&rdquo; Ben sees a scary transition period ahead, with significant job displacement &mdash; especially in lower-skill roles.</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-2">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">BM</div>
+          <div class="insight-card__speaker">Benjamin Mann</div>
+        </div>
+        <h3 class="insight-card__heading">A Country of Geniuses in a Data Center</h3>
+        <p class="insight-card__text">&ldquo;If we do our jobs, we will have safe aligned superintelligence &mdash; as Dario says in Machines of Love and Grace, a country of geniuses in a data center, and the ability to accelerate positive change in science, technology, education, mathematics. It&rsquo;s going to be amazing.&rdquo;</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-1">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">BC</div>
+          <div class="insight-card__speaker">Boris Cherny</div>
+        </div>
+        <h3 class="insight-card__heading">Coding Is Solved</h3>
+        <p class="insight-card__text">Boris believes coding as we know it is essentially solved. 100% of his code is AI-written since November. Claude Code grew to 4% of all public GitHub commits, with daily active users doubling monthly. The question now is: what comes after?</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-2">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">MK</div>
+          <div class="insight-card__speaker">Mike Krieger</div>
+        </div>
+        <h3 class="insight-card__heading">MCP Will Reshape All Software</h3>
+        <p class="insight-card__text">&ldquo;Everything becomes an MCP endpoint &mdash; the entire digital world becomes scriptable and composable by AI agents.&rdquo; Mike sees MCP as the fastest-growing standard in tech history, already adopted by Microsoft into Windows.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DESIGN ===== -->
+<section id="design" class="products-section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-header__label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+        Design in the AI Era
+      </div>
+      <h2 class="section-header__title">The Design Process Is Dead</h2>
+      <p class="section-header__desc">Jenny Wen&rsquo;s thesis on why traditional design workflows are becoming obsolete.</p>
+    </div>
+
+    <div class="insight-grid">
+      <article class="insight-card fade-in fade-in-delay-1">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">JW</div>
+          <div class="insight-card__speaker">Jenny Wen</div>
+        </div>
+        <h3 class="insight-card__heading">Discovery &rarr; Mock &rarr; Iterate Is Over</h3>
+        <p class="insight-card__text">The classic design process &mdash; research first, personas, journey maps, problem statements, then solutions &mdash; no longer fits. AI is accelerating prototyping so fast that rigid processes are failing designers. Jenny argues for starting from solutions and trusting designer judgment.</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-2">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">JW</div>
+          <div class="insight-card__speaker">Jenny Wen</div>
+        </div>
+        <h3 class="insight-card__heading">Designers Must Code</h3>
+        <p class="insight-card__text">At Anthropic, designers code. The design team spans from technical prototypers to high-craft specialists. Jenny&rsquo;s hiring archetypes include Strong Generalists (80th percentile in multiple skills), Deep Specialists (top 10%), and Craft New Grads who are wise beyond their years.</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-1">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">JW</div>
+          <div class="insight-card__speaker">Jenny Wen</div>
+        </div>
+        <h3 class="insight-card__heading">Chatbots Are More Durable Than You Think</h3>
+        <p class="insight-card__text">Contrary to the hype that chatbot interfaces will be replaced, Jenny argues they may be more durable than most people expect. The conversational interface has staying power because it maps naturally to how humans communicate.</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-2">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">JW</div>
+          <div class="insight-card__speaker">Jenny Wen</div>
+        </div>
+        <h3 class="insight-card__heading">Craft Is the Differentiator</h3>
+        <p class="insight-card__text">&ldquo;The best teams roast each other &mdash; psychological safety combined with high standards.&rdquo; In the AI era, taste and craft become the key differentiators. AI can generate options, but human judgment on what&rsquo;s excellent is still irreplaceable.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STORIES ===== -->
+<section id="stories">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-header__label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        Pivotal Moments
+      </div>
+      <h2 class="section-header__title">The Stories Behind the Leaders</h2>
+      <p class="section-header__desc">Defining moments that shaped their paths to Anthropic.</p>
+    </div>
+
+    <div class="insight-grid">
+      <article class="insight-card fade-in fade-in-delay-1">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">BM</div>
+          <div class="insight-card__speaker">Benjamin Mann</div>
+        </div>
+        <h3 class="insight-card__heading">Leaving OpenAI with the Safety Team</h3>
+        <p class="insight-card__text">Ben was one of the architects of GPT-3 at OpenAI. He left with the entire safety team because safety wasn&rsquo;t being prioritized enough. That exodus became the founding story of Anthropic &mdash; a company built from day one on the principle that AI safety can&rsquo;t be an afterthought.</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-2">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">MK</div>
+          <div class="insight-card__speaker">Mike Krieger</div>
+        </div>
+        <h3 class="insight-card__heading">Shutting Down Artifact</h3>
+        <p class="insight-card__text">After leaving Meta, Mike co-founded Artifact &mdash; an AI-powered news app he loved. But he made the hard call to shut it down. His lesson for founders: knowing when to let go of something you love is as important as knowing when to build. He then joined Anthropic to lead product.</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-1">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">BC</div>
+          <div class="insight-card__speaker">Boris Cherny</div>
+        </div>
+        <h3 class="insight-card__heading">Two Weeks at Cursor</h3>
+        <p class="insight-card__text">Boris briefly left Anthropic for Cursor &mdash; and came back after just two weeks. The pull of building Claude Code and the mission-driven culture at Anthropic proved too strong. Claude Code itself started as a quick hack and grew into a product that now accounts for 4% of all public GitHub commits.</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-2">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">JW</div>
+          <div class="insight-card__speaker">Jenny Wen</div>
+        </div>
+        <h3 class="insight-card__heading">Director to IC &mdash; By Choice</h3>
+        <p class="insight-card__text">Jenny was Director of Design at Figma, leading the FigJam and Slides teams. She voluntarily stepped down from a director role to return to individual contributor work at Anthropic. The reason: a front-row seat to the most transformative technology of our time was worth more than a title.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STRATEGY ===== -->
+<section id="strategy" class="products-section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-header__label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Startup Strategy
+      </div>
+      <h2 class="section-header__title">Advice for AI Founders</h2>
+      <p class="section-header__desc">Mike Krieger&rsquo;s competitive playbook for building in the age of AI giants.</p>
+    </div>
+
+    <div class="insight-grid">
+      <article class="insight-card fade-in fade-in-delay-1">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">MK</div>
+          <div class="insight-card__speaker">Mike Krieger</div>
+        </div>
+        <h3 class="insight-card__heading">Three Moats Against Big AI</h3>
+        <p class="insight-card__text">For AI startups worried about getting crushed by OpenAI, Anthropic, or Google, Mike identifies three moats: (1) Deep domain expertise (like Harvey in legal), (2) Differentiated go-to-market with specific customer knowledge, and (3) Completely new interaction paradigms that incumbents can&rsquo;t easily copy.</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-2">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">MK</div>
+          <div class="insight-card__speaker">Mike Krieger</div>
+        </div>
+        <h3 class="insight-card__heading">Embrace Who You Are</h3>
+        <p class="insight-card__text">On Anthropic vs. OpenAI: &ldquo;Embrace who you are and what you could be rather than who others are.&rdquo; Anthropic isn&rsquo;t trying to beat ChatGPT at consumer mindshare &mdash; they&rsquo;re doubling down on developers, builders, agentic behavior, and coding.</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-1">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">MK</div>
+          <div class="insight-card__speaker">Mike Krieger</div>
+        </div>
+        <h3 class="insight-card__heading">Value Delivered, Not Engagement</h3>
+        <p class="insight-card__text">The future of product metrics in AI isn&rsquo;t engagement &mdash; it&rsquo;s actual value delivered. When Claude helps prototype something in 25 minutes that would have taken six hours, that&rsquo;s the metric that matters. Traditional engagement metrics can be misleading.</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-2">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">BC</div>
+          <div class="insight-card__speaker">Boris Cherny</div>
+        </div>
+        <h3 class="insight-card__heading">Underfund Teams, Unlimited Tokens</h3>
+        <p class="insight-card__text">Boris&rsquo;s counterintuitive product principle: underfund teams slightly and give them unlimited AI tokens. This forces creative problem-solving while removing barriers to experimentation. &ldquo;80% of ideas being bad is okay &mdash; speed and experimentation matter most.&rdquo;</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARENTING ===== -->
+<section id="parenting">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-header__label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c0-3 2.5-5.5 5.5-5.5S23 13.5 23 10.5 20 5 17 5s-5 2.5-5 5.5"/><path d="M12 22c0-3-2.5-5.5-5.5-5.5S1 13.5 1 10.5 4 5 7 5s5 2.5 5 5.5"/><path d="M12 22V10.5"/></svg>
+        Raising Kids in the AI Age
+      </div>
+      <h2 class="section-header__title">What to Teach the Next Generation</h2>
+      <p class="section-header__desc">How Anthropic leaders are preparing their own children for an AI-transformed world.</p>
+    </div>
+
+    <div class="insight-grid">
+      <article class="insight-card fade-in fade-in-delay-1">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">MK</div>
+          <div class="insight-card__speaker">Mike Krieger</div>
+        </div>
+        <h3 class="insight-card__heading">&ldquo;You Can Ask Claude, But I Know I&rsquo;m Right&rdquo;</h3>
+        <p class="insight-card__text">Mike&rsquo;s daughter&rsquo;s quote perfectly captures what he wants to instill: curiosity, scientific thinking, and &mdash; critically &mdash; maintaining independent thought. Don&rsquo;t outsource all cognition to AI. The ability to think independently and verify claims matters more than ever.</p>
+      </article>
+      <article class="insight-card fade-in fade-in-delay-2">
+        <div class="insight-card__header">
+          <div class="insight-card__avatar">BM</div>
+          <div class="insight-card__speaker">Benjamin Mann</div>
+        </div>
+        <h3 class="insight-card__heading">Facts Will Fade &mdash; Framing Won&rsquo;t</h3>
+        <p class="insight-card__text">Ben is teaching his kids curiosity, creativity, self-led learning, kindness, and thoughtfulness. His core belief: &ldquo;Facts are going to fade &mdash; what matters is framing, questioning, and adapting in real time.&rdquo; Traditional academics matter less than learning how to learn.</p>
+      </article>
     </div>
   </div>
 </section>
